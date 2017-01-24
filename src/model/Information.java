@@ -103,5 +103,13 @@ public class Information {
         System.out.println("The wind is from the " + getWindDirection() +
                 " at " + getWindSpeed() + " MPH");
     }
+
+    public String currentConditions(){
+        String weather = "Currently in " + getTownName() + ", " + getStateName() +
+                " it is " + getCurrentConditions() + ". \nThe temperature is " + getTemperatureF() +
+                " degrees F and the wind is from the " + getWindDirection() + " at " + getWindSpeed() +
+                " MPH.";
+        return weather;
+    }
 }
 
