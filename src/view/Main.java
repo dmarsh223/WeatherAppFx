@@ -1,4 +1,4 @@
-package sample;
+package view;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import model.Information;
+import model.Parser;
 
 public class Main extends Application {
 

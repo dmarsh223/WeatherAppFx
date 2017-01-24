@@ -1,6 +1,7 @@
-package sample;
+package model;
 
 import com.sun.org.apache.xerces.internal.parsers.DOMParser;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
