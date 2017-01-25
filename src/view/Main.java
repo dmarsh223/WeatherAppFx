@@ -72,9 +72,11 @@ public class Main extends Application {
         //create scene and specify h & w
         Scene scene = new Scene(grid, 500, 475);
 
+        //link to css
         scene.getStylesheets().add
                 (Main.class.getResource("/resources/style.css").toExternalForm());
 
+        //start scene
         primaryStage.setScene(scene);
         primaryStage.show();
 
