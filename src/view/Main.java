@@ -54,6 +54,8 @@ public class Main extends Application {
         hbBtn.getChildren().add(btn);
         grid.add(hbBtn, 1, 4);
 
+
+
         //create text object for weather output and set to grid location
         Text actiontarget = new Text();
         grid.add(actiontarget, 1, 6);
@@ -69,6 +71,9 @@ public class Main extends Application {
 
         //create scene and specify h & w
         Scene scene = new Scene(grid, 500, 475);
+
+        scene.getStylesheets().add
+                (Main.class.getResource("/resources/style.css").toExternalForm());
 
         primaryStage.setScene(scene);
         primaryStage.show();
