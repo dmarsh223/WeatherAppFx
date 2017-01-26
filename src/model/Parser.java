@@ -33,6 +33,7 @@ public class Parser {
         Document doc = parser.getDocument();
 
         //this pulls elements from the child display location for location information
+
         Node locationInfo = doc.getElementsByTagName("display_location").item(0);
         NodeList childrenLocation = locationInfo.getChildNodes();
 
