@@ -15,7 +15,6 @@ import java.net.URL;
 
 public class Parser {
 
-
     public void newParse(Controller manahawkin) {
 
         //xmlReader

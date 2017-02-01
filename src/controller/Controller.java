@@ -1,13 +1,18 @@
 package controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
+import model.Parser;
 
-public class Controller {
+import java.net.URL;
+import java.util.ResourceBundle;
 
-    private Pane testPane;
+public class Controller{
+
+    @FXML private Label labelTest;
 
     private String townName;
     private String stateName;
@@ -121,14 +126,11 @@ public class Controller {
 
     @FXML
     public void buttonClicked(){
-//        String weather = currentConditions();
-//        System.out.println(weather);
 
-
-        String townName = getTownName();
-        System.out.println(townName);
+        labelTest.setText(getStateName());
 
     }
+
 
 
 }
