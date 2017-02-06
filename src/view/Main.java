@@ -26,8 +26,8 @@ public class Main extends Application {
         //code example here http://docs.oracle.com/javafx/2/get_started/jfxpub-get_started.htm
         primaryStage.setTitle("Manahawkin Weather");
 
-        String townTest = manahawkin.currentConditions();
-        System.out.println(townTest);
+//        String townTest = manahawkin.currentConditions();
+//        System.out.println(townTest);
 
 
 

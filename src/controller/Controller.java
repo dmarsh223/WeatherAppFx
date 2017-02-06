@@ -127,9 +127,12 @@ public class Controller{
     @FXML
     public void buttonClicked(){
 
-        labelTest.setText(getStateName());
+        labelTest.setText(currentConditions());
+        System.out.println(currentConditions());
 
     }
+
+
 
 
 
