@@ -23,6 +23,9 @@ public class Controller{
     private String temperatureF;
     private double windSpeed;
     private String windDirection;
+    private String userURL;
+
+    Parser newParser = new Parser();
 
     public String getTownName() {
         return townName;
@@ -96,7 +99,7 @@ public class Controller{
         this.windDirection = windDirection;
     }
 
-    Parser newParser = new Parser();
+
 
     //testing parsing from XML file for correct information
     public void returnInfo(){
@@ -128,6 +131,8 @@ public class Controller{
 
     @FXML
     public void buttonClicked(){
+
+        userURL = "test";
         newParser.newParse(this);
 
         labelTest.setText(currentConditions());
