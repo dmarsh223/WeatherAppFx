@@ -42,16 +42,16 @@ public class Parser {
             if (childrenLocation.item(i).getNodeType() == Node.ELEMENT_NODE) {
                 Element elem = (Element) childrenLocation.item(i);
 
-                if (elem.getTagName() == "city") {
+                if (elem.getTagName().equalsIgnoreCase("city")) {
                     manahawkin.setTownName(elem.getTextContent());
                 }
-                if (elem.getTagName() == "state") {
+                if (elem.getTagName().equalsIgnoreCase("state")) {
                     manahawkin.setStateName(elem.getTextContent());
                 }
-                if (elem.getTagName() == "elevation") {
+                if (elem.getTagName().equalsIgnoreCase("elevation")) {
                     manahawkin.setElevation(Double.parseDouble(elem.getTextContent()));
                 }
-                if (elem.getTagName() == "zip") {
+                if (elem.getTagName().equalsIgnoreCase("zip")) {
                     manahawkin.setZipCode(elem.getTextContent());
                 }
             }
@@ -66,19 +66,19 @@ public class Parser {
             if (childrenWeather.item(i).getNodeType() == Node.ELEMENT_NODE) {
                 Element elem = (Element) childrenWeather.item(i);
 
-                if (elem.getTagName() == "observation_time") {
+                if (elem.getTagName().equalsIgnoreCase("observation_time")) {
                     manahawkin.setObservationTime(elem.getTextContent());
                 }
-                if (elem.getTagName() == "weather") {
+                if (elem.getTagName().equalsIgnoreCase("weather")) {
                     manahawkin.setCurrentConditions(elem.getTextContent());
                 }
-                if (elem.getTagName() == "temp_f") {
+                if (elem.getTagName().equalsIgnoreCase("temp_f")) {
                     manahawkin.setTemperatureF(elem.getTextContent());
                 }
-                if (elem.getTagName() == "wind_mph") {
+                if (elem.getTagName().equalsIgnoreCase("wind_mph")) {
                     manahawkin.setWindSpeed(Double.parseDouble(elem.getTextContent()));
                 }
-                if (elem.getTagName() == "wind_dir") {
+                if (elem.getTagName().equalsIgnoreCase("wind_dir")) {
                     manahawkin.setWindDirection(elem.getTextContent());
                 }
             }

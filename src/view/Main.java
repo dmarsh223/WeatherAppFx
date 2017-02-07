@@ -17,11 +17,11 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
 
         //create new Parser object and new Controller object
-        Parser newParser = new Parser();
+
         Controller manahawkin = new Controller();
 
         //pass new Controller object to new parser object and run test output
-        newParser.newParse(manahawkin);
+        //newParser.newParse(manahawkin);
 
         //code example here http://docs.oracle.com/javafx/2/get_started/jfxpub-get_started.htm
         primaryStage.setTitle("Manahawkin Weather");

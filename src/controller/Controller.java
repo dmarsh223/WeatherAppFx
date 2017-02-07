@@ -96,6 +96,8 @@ public class Controller{
         this.windDirection = windDirection;
     }
 
+    Parser newParser = new Parser();
+
     //testing parsing from XML file for correct information
     public void returnInfo(){
 
@@ -126,6 +128,7 @@ public class Controller{
 
     @FXML
     public void buttonClicked(){
+        newParser.newParse(this);
 
         labelTest.setText(currentConditions());
         System.out.println(currentConditions());
