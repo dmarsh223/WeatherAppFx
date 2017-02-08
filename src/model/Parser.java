@@ -11,17 +11,22 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 public class Parser {
 
-    public void newParse(Conditions manahawkin) {
+    public void newParse(Conditions manahawkin, URL userURL) throws MalformedURLException {
 
         //xmlReader
         DOMParser parser = new DOMParser();
 
+
+
+
+
         try {
-            parser.parse(new InputSource(new URL(("http://api.wunderground.com/api/184245b00544774c/conditions/q/NJ/Manahawkin.xml")).openStream()));
+            parser.parse(new InputSource((userURL).openStream()));
         } catch (SAXException e) {
             e.printStackTrace();
         } catch (IOException e) {
