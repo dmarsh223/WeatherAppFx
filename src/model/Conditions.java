@@ -14,7 +14,6 @@ public class Conditions {
     private String windDirection;
     private String userURL;
 
-    Parser newParser = new Parser();
 
     public String getTownName() {
         return townName;
