@@ -2,7 +2,7 @@ package model;
 
 import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 
-import controller.Controller;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -15,7 +15,7 @@ import java.net.URL;
 
 public class Parser {
 
-    public void newParse(Controller manahawkin) {
+    public void newParse(Conditions manahawkin) {
 
         //xmlReader
         DOMParser parser = new DOMParser();
