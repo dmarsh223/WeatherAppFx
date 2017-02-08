@@ -87,8 +87,6 @@ public class Conditions {
         this.windDirection = windDirection;
     }
 
-
-
     //testing parsing from XML file for correct information
     public void returnInfo(){
 

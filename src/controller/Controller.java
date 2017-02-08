@@ -23,25 +23,23 @@ public class Controller{
     Parser newParser = new Parser();
     Conditions yourTown = new Conditions();
 
-
     @FXML
     public void buttonClicked() throws MalformedURLException, URISyntaxException {
 
-
-
-
-
-
+        //obtain user input from test fields
         state = stateTextField.getText();
         city = cityTextField.getText();
+
+        //create URL from text field inputs and escape any spaces in URL
         userURL = "http://api.wunderground.com/api/184245b00544774c/conditions/q/"+state+"/"+city+".xml";
         userURL = userURL.replaceAll(" ", "%20");
+
+        //printURL for testing
         System.out.println(userURL);
 
+        //create URL from URI
         URI uri = new URI(userURL);
         URL url = uri.toURL();
-
-
 
         newParser.newParse(yourTown, url);
 

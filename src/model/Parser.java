@@ -21,10 +21,6 @@ public class Parser {
         //xmlReader
         DOMParser parser = new DOMParser();
 
-
-
-
-
         try {
             parser.parse(new InputSource((userURL).openStream()));
         } catch (SAXException e) {
@@ -34,11 +30,9 @@ public class Parser {
         }
 
         //example found here http://stackoverflow.com/questions/24446849/parse-xml-without-tagname
-
         Document doc = parser.getDocument();
 
         //this pulls elements from the child display location for location information
-
         Node locationInfo = doc.getElementsByTagName("display_location").item(0);
         NodeList childrenLocation = locationInfo.getChildNodes();
 
