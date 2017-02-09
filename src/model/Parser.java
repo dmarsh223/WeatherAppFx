@@ -16,7 +16,7 @@ import java.net.URL;
 
 public class Parser {
 
-    public void newParse(Conditions manahawkin, URL userURL) throws MalformedURLException {
+    public void newParse(Conditions location, URL userURL) throws MalformedURLException {
 
         //xmlReader
         DOMParser parser = new DOMParser();
@@ -42,16 +42,16 @@ public class Parser {
                 Element elem = (Element) childrenLocation.item(i);
 
                 if (elem.getTagName().equalsIgnoreCase("city")) {
-                    manahawkin.setTownName(elem.getTextContent());
+                    location.setTownName(elem.getTextContent());
                 }
                 if (elem.getTagName().equalsIgnoreCase("state")) {
-                    manahawkin.setStateName(elem.getTextContent());
+                    location.setStateName(elem.getTextContent());
                 }
                 if (elem.getTagName().equalsIgnoreCase("elevation")) {
-                    manahawkin.setElevation(Double.parseDouble(elem.getTextContent()));
+                    location.setElevation(Double.parseDouble(elem.getTextContent()));
                 }
                 if (elem.getTagName().equalsIgnoreCase("zip")) {
-                    manahawkin.setZipCode(elem.getTextContent());
+                    location.setZipCode(elem.getTextContent());
                 }
             }
         }
@@ -66,19 +66,19 @@ public class Parser {
                 Element elem = (Element) childrenWeather.item(i);
 
                 if (elem.getTagName().equalsIgnoreCase("observation_time")) {
-                    manahawkin.setObservationTime(elem.getTextContent());
+                    location.setObservationTime(elem.getTextContent());
                 }
                 if (elem.getTagName().equalsIgnoreCase("weather")) {
-                    manahawkin.setCurrentConditions(elem.getTextContent());
+                    location.setCurrentConditions(elem.getTextContent());
                 }
                 if (elem.getTagName().equalsIgnoreCase("temp_f")) {
-                    manahawkin.setTemperatureF(elem.getTextContent());
+                    location.setTemperatureF(elem.getTextContent());
                 }
                 if (elem.getTagName().equalsIgnoreCase("wind_mph")) {
-                    manahawkin.setWindSpeed(Double.parseDouble(elem.getTextContent()));
+                    location.setWindSpeed(Double.parseDouble(elem.getTextContent()));
                 }
                 if (elem.getTagName().equalsIgnoreCase("wind_dir")) {
-                    manahawkin.setWindDirection(elem.getTextContent());
+                    location.setWindDirection(elem.getTextContent());
                 }
             }
         }

@@ -20,11 +20,11 @@ public class Controller{
     private String state;
     private String userURL;
 
-    Parser newParser = new Parser();
-    Conditions yourTown = new Conditions();
+    private Parser newParser = new Parser();
+    private Conditions yourTown = new Conditions();
 
     @FXML
-    public void buttonClicked() throws MalformedURLException, URISyntaxException {
+    public void buttonClicked() throws URISyntaxException {
 
         //obtain user input from test fields
         state = stateTextField.getText();
@@ -39,9 +39,19 @@ public class Controller{
 
         //create URL from URI
         URI uri = new URI(userURL);
-        URL url = uri.toURL();
+        URL url = null;
+
+
+        try {
+            url = uri.toURL();
+
 
         newParser.newParse(yourTown, url);
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+            labelTest.setText("Please enter a valid city and state.");
+        }
 
         labelTest.setText(yourTown.currentConditions());
         System.out.println(yourTown.currentConditions());
