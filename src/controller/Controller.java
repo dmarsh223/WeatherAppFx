@@ -1,8 +1,7 @@
 package controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import model.Conditions;
 import model.Parser;
 
@@ -16,12 +15,23 @@ public class Controller{
     @FXML private Label labelTest;
     @FXML private TextField stateTextField;
     @FXML private TextField cityTextField;
+    @FXML public ComboBox myComboBox;
     private String city;
     private String state;
     private String userURL;
 
     private Parser newParser = new Parser();
     private Conditions yourTown = new Conditions();
+
+
+    public void setData(){
+
+        myComboBox.getItems().clear();
+        myComboBox.getItems().addAll(
+            "Test item 1",
+            "test item 2");
+
+    }
 
     @FXML
     public void buttonClicked() throws URISyntaxException {
@@ -44,10 +54,7 @@ public class Controller{
 
         try {
             url = uri.toURL();
-
-
         newParser.newParse(yourTown, url);
-
         } catch (MalformedURLException e) {
             e.printStackTrace();
             labelTest.setText("Please enter a valid city and state.");
@@ -57,6 +64,8 @@ public class Controller{
         System.out.println(yourTown.currentConditions());
 
     }
+
+
 
 
 

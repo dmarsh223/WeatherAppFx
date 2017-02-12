@@ -1,9 +1,12 @@
 package view;
 
+import controller.Controller;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -11,12 +14,22 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
+        Parent root = loader.load();
+
+//        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+
+        Controller controller = loader.getController();
+
+        controller.setData();
 
         //create scene and specify h & w
         Scene scene = new Scene(root, 800, 675);
 
         primaryStage.setTitle("Manahawkin Weather");
+
+
 
         //start scene
         primaryStage.setScene(scene);
