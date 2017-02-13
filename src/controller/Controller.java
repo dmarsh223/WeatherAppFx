@@ -5,6 +5,7 @@ import javafx.scene.control.*;
 import model.Conditions;
 import model.Parser;
 
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -19,6 +20,8 @@ public class Controller{
     private String city;
     private String state;
     private String userURL;
+    private String stateReader;
+    String[] statesArray = new String[50];
 
     private Parser newParser = new Parser();
     private Conditions yourTown = new Conditions();
@@ -26,10 +29,43 @@ public class Controller{
 
     public void setData(){
 
+//        FileInputStream in = null;
+//        try {
+//            in = new FileInputStream("states.txt");
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
+
+
+
+
+
+        //new stuff
+
+        InputStream in = this.getClass().getClassLoader()
+                .getResourceAsStream("/states.txt");
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+
+//        try {
+//            while ((stateReader = br.readLine()) != null) {
+//
+//                for (int j = 0; j < statesArray.length; j++){
+//                    statesArray[j] = br.readLine();
+//                }
+//            }
+//            in.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            System.out.println("IO Exception reading in state list");
+//        }
+//
+
+
+
+
         myComboBox.getItems().clear();
-        myComboBox.getItems().addAll(
-            "Test item 1",
-            "test item 2");
+        myComboBox.getItems().addAll(statesArray);
 
     }
 
@@ -65,7 +101,7 @@ public class Controller{
 
     }
 
-
+//http://stackoverflow.com/questions/19065464/how-to-populate-a-list-values-to-a-combobox-in-javafx
 
 
 

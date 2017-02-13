@@ -17,12 +17,12 @@ public class Main extends Application {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
         Parent root = loader.load();
+        Controller controller = loader.getController();
+        controller.setData();
 
 //        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
 
-        Controller controller = loader.getController();
 
-        controller.setData();
 
         //create scene and specify h & w
         Scene scene = new Scene(root, 800, 675);
