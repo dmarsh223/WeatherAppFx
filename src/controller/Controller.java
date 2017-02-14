@@ -10,6 +10,7 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 public class Controller{
 
@@ -27,41 +28,32 @@ public class Controller{
     private Conditions yourTown = new Conditions();
 
 
-    public void setData(){
+    public void setData() throws FileNotFoundException {
 
-//        FileInputStream in = null;
-//        try {
-//            in = new FileInputStream("states.txt");
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
+        InputStream is = null;
+        BufferedReader br = null;
 
+        is = new FileInputStream("src\\resources\\states.txt");
+        br = new BufferedReader(new InputStreamReader(is));
 
+        try {
+            while ((stateReader = br.readLine()) != null) {
 
+                for (int j = 0; j < statesArray.length; j++){
+                    statesArray[j] = br.readLine();
+                }
+            }
 
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("IO Exception reading in state list");
+        }
 
-        //new stuff
-
-        InputStream in = this.getClass().getClassLoader()
-                .getResourceAsStream("/states.txt");
-
-        BufferedReader br = new BufferedReader(new InputStreamReader(in));
-
-//        try {
-//            while ((stateReader = br.readLine()) != null) {
-//
-//                for (int j = 0; j < statesArray.length; j++){
-//                    statesArray[j] = br.readLine();
-//                }
-//            }
-//            in.close();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            System.out.println("IO Exception reading in state list");
-//        }
-//
-
-
+        try {
+            br.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
         myComboBox.getItems().clear();

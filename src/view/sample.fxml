@@ -27,6 +27,7 @@
       <GridPane>
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
@@ -37,9 +38,9 @@
          <children>
             <Button fx:id="button" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="30.0" prefWidth="91.0" text="Button" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="cityTextField" prefHeight="25.0" prefWidth="116.0" promptText="City" GridPane.rowIndex="1" />
-            <TextField fx:id="stateTextField" promptText="State (Example: NJ. AZ. FL)" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="stateTextField" promptText="State (Example: NJ. AZ. FL)" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <ComboBox fx:id="myComboBox" prefWidth="150.0" promptText="Please pick a state" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <ComboBox fx:id="myComboBox" prefWidth="150.0" GridPane.rowIndex="1" />
    </children>
 </GridPane>
