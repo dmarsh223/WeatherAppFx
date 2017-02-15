@@ -10,12 +10,11 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
+
 
 public class Controller{
 
     @FXML private Label labelTest;
-    @FXML private TextField stateTextField;
     @FXML private TextField cityTextField;
     @FXML public ComboBox myComboBox;
     private String city;
@@ -65,7 +64,7 @@ public class Controller{
     public void buttonClicked() throws URISyntaxException {
 
         //obtain user input from test fields
-        state = stateTextField.getText();
+        state = (String) myComboBox.getValue();
         city = cityTextField.getText();
 
         //create URL from text field inputs and escape any spaces in URL
@@ -77,7 +76,9 @@ public class Controller{
 
         //create URL from URI
         URI uri = new URI(userURL);
-        URL url = null;
+        URL url;
+
+        System.out.println(myComboBox.getValue());
 
 
         try {
@@ -94,10 +95,6 @@ public class Controller{
     }
 
 //http://stackoverflow.com/questions/19065464/how-to-populate-a-list-values-to-a-combobox-in-javafx
-
-
-
-
 
 }
 
