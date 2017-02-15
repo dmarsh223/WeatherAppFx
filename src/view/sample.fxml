@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -19,16 +20,15 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Label fx:id="labelTest" text="Label" textAlignment="CENTER" GridPane.rowIndex="1">
+      <Label fx:id="labelTest" textAlignment="CENTER" GridPane.rowIndex="1">
          <font>
             <Font name="Arial Bold" size="16.0" />
          </font>
       </Label>
       <GridPane>
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="389.0" minWidth="10.0" prefWidth="313.5" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="355.0" minWidth="10.0" prefWidth="286.5" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -36,10 +36,12 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="button" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="30.0" prefWidth="91.0" text="Button" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="cityTextField" prefHeight="25.0" prefWidth="116.0" promptText="City" GridPane.rowIndex="1" />
-            <TextField fx:id="stateTextField" promptText="State (Example: NJ. AZ. FL)" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <ComboBox fx:id="myComboBox" prefWidth="150.0" promptText="Please pick a state" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="button" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="30.0" prefWidth="91.0" text="Get Weather" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <TextField fx:id="cityTextField" prefHeight="25.0" prefWidth="349.0" promptText="City" GridPane.rowIndex="1" />
+            <ComboBox fx:id="myComboBox" prefWidth="150.0" promptText="Please pick a state" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding></ComboBox>
          </children>
       </GridPane>
    </children>
