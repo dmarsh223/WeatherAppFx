@@ -2,6 +2,8 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import model.Conditions;
 import model.Parser;
 
@@ -22,6 +24,9 @@ public class Controller{
     private String userURL;
     private String stateReader;
     String[] statesArray = new String[50];
+
+    //image test
+    @FXML ImageView imv = new ImageView();
 
     private Parser newParser = new Parser();
     private Conditions yourTown = new Conditions();
@@ -91,6 +96,13 @@ public class Controller{
 
         labelTest.setText(yourTown.currentConditions());
         System.out.println(yourTown.currentConditions());
+
+
+
+     //image test this will be replaced
+        File file = new File("src\\resources\\rain.jpg");
+        Image image = new Image(file.toURI().toString());
+        imv.setImage(image);
 
     }
 
