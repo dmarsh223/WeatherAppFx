@@ -13,7 +13,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-
 public class Controller{
 
     @FXML private Label labelTest;
@@ -30,7 +29,6 @@ public class Controller{
 
     private Parser newParser = new Parser();
     private Conditions yourTown = new Conditions();
-
 
     public void setData() throws FileNotFoundException {
 
@@ -59,10 +57,9 @@ public class Controller{
             e.printStackTrace();
         }
 
-
+        //clear combobox and set array of states to equal combobox
         myComboBox.getItems().clear();
         myComboBox.getItems().addAll(statesArray);
-
     }
 
     @FXML
@@ -83,9 +80,7 @@ public class Controller{
         URI uri = new URI(userURL);
         URL url;
 
-        System.out.println(myComboBox.getValue());
-
-
+        //start new parse
         try {
             url = uri.toURL();
         newParser.newParse(yourTown, url);
@@ -94,15 +89,56 @@ public class Controller{
             labelTest.setText("Please enter a valid city and state.");
         }
 
+        //set label to equal the current conditions test string and print to console for test of output
         labelTest.setText(yourTown.currentConditions());
         System.out.println(yourTown.currentConditions());
 
+    //call weather image method
+    weatherImage();
+    }
 
+    public void weatherImage(){
 
-     //image test this will be replaced
-        File file = new File("src\\resources\\rain.jpg");
-        Image image = new Image(file.toURI().toString());
-        imv.setImage(image);
+        File file;
+        Image image;
+
+        String currentConditions = yourTown.getCurrentConditions();
+
+        //clear weather
+        if (currentConditions.equals("Clear")){
+
+            file = new File("src\\resources\\rain.jpg");
+            image = new Image(file.toURI().toString());
+            imv.setImage(image);
+        }
+        //rain
+        if (currentConditions.equals("Rain")){
+
+            file = new File("src\\resources\\rain.jpg");
+            image = new Image(file.toURI().toString());
+            imv.setImage(image);
+        }
+        //cloudy
+        if (currentConditions.equals("Cloudy")){
+
+            file = new File("src\\resources\\rain.jpg");
+            image = new Image(file.toURI().toString());
+            imv.setImage(image);
+        }
+        //partly cloudy
+        if (currentConditions.equals("Party Cloudy")){
+
+            file = new File("src\\resources\\rain.jpg");
+            image = new Image(file.toURI().toString());
+            imv.setImage(image);
+        }
+        //snow
+        if (currentConditions.equals("Snow")){
+
+            file = new File("src\\resources\\rain.jpg");
+            image = new Image(file.toURI().toString());
+            imv.setImage(image);
+        }
 
     }
 

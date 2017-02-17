@@ -14,22 +14,16 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-
+        //create xmlloader, load it, and initialize and call controller to set initial data
         FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
         Parent root = loader.load();
         Controller controller = loader.getController();
         controller.setData();
 
-//        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-
-
-
         //create scene and specify h & w
         Scene scene = new Scene(root, 800, 675);
 
         primaryStage.setTitle("Manahawkin Weather");
-
-
 
         //start scene
         primaryStage.setScene(scene);
@@ -39,6 +33,5 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
 
 }
